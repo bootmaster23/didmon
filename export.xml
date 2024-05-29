@@ -1145,9 +1145,9 @@
 	<!--Manually Added by PPLN-->
 	<RuleGroup name="" groupRelation="or">
 		<FileDeleteDetected onmatch="exclude">
+			<!--NOTE: Using exclude with no rules means everything will be logged-->
 		</FileDeleteDetected>
 	</RuleGroup>
-
 
 
 
