@@ -1150,7 +1150,9 @@
 			<Image condition="is">C:\Program Files\TMDR Agent\TMDRagent.exe</Image>
 			<User condition="contains any">NETWORK SERVICE; LOCAL SERVICE</User>
 			<Image condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
+			<Image condition="is">C:\Program Files\Google\Chrome\Application\chrome.exe</Image>
 			<Image condition="is">C:\WINDOWS\system32\taskmgr.exe</Image>
+			<Image condition="contains">ms-teams.exe</Image>
 			<Image condition="is">C:\WINDOWS\system32\wermgr.exe</Image>
 			<Image condition="is">C:\WINDOWS\system32\svchost.exe</Image>
 			<TargetFilename condition="contains">AppData\Local\Temp</TargetFilename>
