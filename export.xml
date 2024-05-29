@@ -1142,33 +1142,6 @@
 	</RuleGroup>
 
 
-	<!--Manually Added by PPLN
-		
-		<!--Source: https://medium.com/falconforce/sysmon-13-10-filedeletedetected-fe2475cb419e-->
-		<RuleGroup name="" groupRelation="or">
-			<FileDeleteDetected onmatch="exclude">
-				<Image condition="is">C:\Program Files\TMDR Agent\TMDRagent.exe</Image>
-				<User condition="contains any">NETWORK SERVICE; LOCAL SERVICE</User>
-				<Image condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
-				<Image condition="is">C:\Program Files\Google\Chrome\Application\chrome.exe</Image>
-				<Image condition="is">C:\WINDOWS\system32\taskmgr.exe</Image>
-				<Image condition="end with">Application\msedge.exe</Image>
-				<Image condition="contains">ms-teams.exe</Image>
-				<Image condition="is">C:\WINDOWS\system32\wermgr.exe</Image>
-				<Image condition="is">C:\WINDOWS\system32\svchost.exe</Image>
-				<TargetFilename condition="contains">AppData\Local\Temp</TargetFilename>
-				<TargetFilename condition="contains">PowerShell\StartupProfileData</TargetFilename>
-				<TargetFilename condition="contains">ossec-agent\wazuh-agent.state</TargetFilename>
-			</FileDeleteDetected>
-		</RuleGroup>
-	-->
-
-
-
-
-
-
-
 
 	<!--SYSMON EVENT ID 23 : FILE DELETE [FileDelete]-->
 		<!--EVENT 22: "File Delete"-->
