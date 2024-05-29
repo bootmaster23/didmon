@@ -1156,6 +1156,7 @@
 			<Image condition="is">C:\WINDOWS\system32\wermgr.exe</Image>
 			<Image condition="is">C:\WINDOWS\system32\svchost.exe</Image>
 			<TargetFilename condition="contains">AppData\Local\Temp</TargetFilename>
+			<TargetFilename condition="contains">PowerShell\StartupProfileData</TargetFilename>
 			<TargetFilename condition="contains">ossec-agent\wazuh-agent.state</TargetFilename>
 		</FileDeleteDetected>
 	</RuleGroup>
