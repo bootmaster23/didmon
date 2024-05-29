@@ -1143,9 +1143,15 @@
 
 
 	<!--Manually Added by PPLN-->
+	
+	<!--Source: https://medium.com/falconforce/sysmon-13-10-filedeletedetected-fe2475cb419e-->
 	<RuleGroup name="" groupRelation="or">
 		<FileDeleteDetected onmatch="exclude">
-			<!--NOTE: Using exclude with no rules means everything will be logged-->
+			<Image condition="is">C:\Program Files\TMDR Agent\TMDRagent.exe</Image>
+			<TargetFilename condition="contains">Google\Chrome\User Data\Default\Network</TargetFilename>
+			<User condition="contains any">NETWORK SERVICE; LOCAL SERVICE</User>
+			<Image condition="contains all">\appdata\local\google\chrome\user data\swreporter\;software_reporter_tool.exe</Image>
+			<Image condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
 		</FileDeleteDetected>
 	</RuleGroup>
 
