@@ -1148,11 +1148,6 @@
 		</FileDeleteDetected>
 	</RuleGroup>
 
-	<RuleGroup name="" groupRelation="or">
-		<FileCreateStreamHash onmatch="exclude">
-		</FileCreateStreamHash>
-	</RuleGroup>
-
 
 
 
