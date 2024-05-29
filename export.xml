@@ -1142,7 +1142,7 @@
 	</RuleGroup>
 
 
-	<!--Manually Added by PPLN-->
+	<!--Manually Added by PPLN
 	
 	<!--Source: https://medium.com/falconforce/sysmon-13-10-filedeletedetected-fe2475cb419e-->
 	<RuleGroup name="" groupRelation="or">
@@ -1161,6 +1161,7 @@
 			<TargetFilename condition="contains">ossec-agent\wazuh-agent.state</TargetFilename>
 		</FileDeleteDetected>
 	</RuleGroup>
+	-->
 
 
 
