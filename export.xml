@@ -1157,7 +1157,7 @@
 			<TargetFilename condition="contains">AppData\Local\Temp</TargetFilename>
 			<TargetFilename condition="contains">Google\Chrome\User Data\Default\Service Worker\CacheStorage</TargetFilename>
 			<TargetFilename condition="contains">ossec-agent\wazuh-agent.state</TargetFilename>
-			<TargetFilename condition="contains">ProgramData\Microsoft\Windows\WER\Temp</TargetFilename>
+			<TargetFilename condition="contains">ProgramData\Microsoft\Windows\WER</TargetFilename>
 		</FileDeleteDetected>
 	</RuleGroup>
 
