@@ -1152,6 +1152,7 @@
 			<Image condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
 			<Image condition="is">C:\Program Files\Google\Chrome\Application\chrome.exe</Image>
 			<Image condition="is">C:\WINDOWS\system32\taskmgr.exe</Image>
+			<Image condition="end with">Application\msedge.exe</Image>
 			<Image condition="contains">ms-teams.exe</Image>
 			<Image condition="is">C:\WINDOWS\system32\wermgr.exe</Image>
 			<Image condition="is">C:\WINDOWS\system32\svchost.exe</Image>
