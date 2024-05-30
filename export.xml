@@ -109,7 +109,6 @@
 			<Image condition="is">C:\Windows\system32\sndVol.exe</Image> <!--Windows: Volume control-->
 			<Image condition="is">C:\Windows\system32\sppsvc.exe</Image> <!--Windows: Software Protection Service-->
 			<Image condition="is">C:\Windows\system32\wbem\WmiApSrv.exe</Image> <!--Windows: WMI performance adapter host process-->
-			<IntegrityLevel condition="is">AppContainer</IntegrityLevel> <!--Windows: Don't care about sandboxed processes right now. Will need to revisit this decision.-->
 			<ParentCommandLine condition="begin with">%%SystemRoot%%\system32\csrss.exe ObjectDirectory=\Windows</ParentCommandLine> <!--Windows:CommandShell: Triggered when programs use the command shell, but doesn't provide attribution for what caused it-->
 			<ParentCommandLine condition="is">C:\windows\system32\wermgr.exe -queuereporting</ParentCommandLine> <!--Windows:Windows error reporting/telemetry-->
 			<CommandLine condition="is">C:\WINDOWS\system32\devicecensus.exe UserCxt</CommandLine>
@@ -177,7 +176,6 @@
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k netsvcs</CommandLine> <!--Windows: Network services-->
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k networkService -p -s DoSvc</CommandLine>
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k networkService -s Dnscache</CommandLine> <!--Windows:Network: DNS caching, other uses -->
-			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k networkService -s LanmanWorkstation</CommandLine> <!--Windows:Network: "Workstation" service, used for SMB file-sharing connections and RDP-->
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k networkService -s NlaSvc</CommandLine> <!--Windows:Network: Network Location Awareness-->
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k networkService -s TermService</CommandLine> <!--Windows:Network: Terminal Services (RDP)-->
 			<CommandLine condition="is">C:\Windows\system32\svchost.exe -k networkService</CommandLine> <!--Windows: Network services-->
@@ -239,6 +237,10 @@
 		<FileCreateTime onmatch="include">
 			<Image name="T1099" condition="begin with">C:\Users</Image> <!--Look for timestomping in user area, usually nothing should be doing that here-->
 			<TargetFilename name="T1099" condition="end with">.exe</TargetFilename> <!--Look for backdated executables anywhere-->
+			<TargetFilename name="T1099" condition="end with">.doc</TargetFilename>
+			<TargetFilename name="T1099" condition="end with">.docx</TargetFilename>
+			<TargetFilename name="T1099" condition="end with">.xls</TargetFilename>
+			<TargetFilename name="T1099" condition="end with">.xlsx</TargetFilename>
 			<Image name="T1099" condition="begin with">\Device\HarddiskVolumeShadowCopy</Image> <!--Nothing should be written here | Credit: @SBousseaden [ https://twitter.com/SBousseaden/status/1133030955407630336 ] -->
 		</FileCreateTime>
 	</RuleGroup>
@@ -271,7 +273,32 @@
 		<NetworkConnect onmatch="include">
 			<!--Suspicious sources for network-connecting binaries-->
 			<Image name="Usermode" condition="begin with">C:\Users</Image> <!--Tools downloaded by users can use other processes for networking, but this is a very valuable indicator.-->
-			<Image name="Caution" condition="begin with">C:\Recycle</Image> <!--Nothing should operate from the RecycleBin locations.-->
+			<Image condition="begin with">D:\</Image>
+			<Image condition="begin with">E:\</Image>
+			<Image condition="begin with">F:\</Image>
+			<Image condition="begin with">G:\</Image>
+			<Image condition="begin with">H:\</Image>
+			<Image condition="begin with">I:\</Image>
+			<Image condition="begin with">J:\</Image>
+			<Image condition="begin with">K:\</Image>
+			<Image condition="begin with">L:\</Image>
+			<Image condition="begin with">M:\</Image>
+			<Image condition="begin with">N:\</Image>
+			<Image condition="begin with">O:\</Image>
+			<Image condition="begin with">P:\</Image>
+			<Image condition="begin with">Q:\</Image>
+			<Image condition="begin with">R:\</Image>
+			<Image condition="begin with">S:\</Image>
+			<Image condition="begin with">T:\</Image>
+			<Image condition="begin with">U:\</Image>
+			<Image condition="begin with">V:\</Image>
+			<Image condition="begin with">W:\</Image>
+			<Image condition="begin with">X:\</Image>
+			<Image condition="begin with">Y:\</Image>
+			<Image condition="begin with">Z:\</Image>
+			<Image condition="begin with">C:\Recycle</Image> <!--Nothing should operate from the RecycleBin locations.-->
+			<Image condition="begin with">C:\Program Files</Image>
+			<Image condition="begin with">C:\Program Files (x86)</Image>
 			<Image condition="begin with">C:\ProgramData</Image> <!--Normally, network communications should be sourced from "Program Files" not from ProgramData, something to look at-->
 			<Image condition="begin with">C:\Windows\Temp</Image> <!--Suspicious anything would communicate from the system-level temp directory-->
 			<Image name="Caution" condition="begin with">\</Image> <!--Devices and VSC shouldn't be executing changes | Credit: @SBousseaden @ionstorm @neu5ron @PerchedSystems [ https://twitter.com/SwiftOnSecurity/status/1133167323991486464 ] -->
@@ -392,6 +419,32 @@
 	<RuleGroup name="" groupRelation="or">
 		<ProcessTerminate onmatch="include">
 			<Image condition="begin with">C:\Users</Image> <!--Process terminations by user binaries-->
+			<Image condition="begin with">D:\</Image>
+			<Image condition="begin with">E:\</Image>
+			<Image condition="begin with">F:\</Image>
+			<Image condition="begin with">G:\</Image>
+			<Image condition="begin with">H:\</Image>
+			<Image condition="begin with">I:\</Image>
+			<Image condition="begin with">J:\</Image>
+			<Image condition="begin with">K:\</Image>
+			<Image condition="begin with">L:\</Image>
+			<Image condition="begin with">M:\</Image>
+			<Image condition="begin with">N:\</Image>
+			<Image condition="begin with">O:\</Image>
+			<Image condition="begin with">P:\</Image>
+			<Image condition="begin with">Q:\</Image>
+			<Image condition="begin with">R:\</Image>
+			<Image condition="begin with">S:\</Image>
+			<Image condition="begin with">T:\</Image>
+			<Image condition="begin with">U:\</Image>
+			<Image condition="begin with">V:\</Image>
+			<Image condition="begin with">W:\</Image>
+			<Image condition="begin with">X:\</Image>
+			<Image condition="begin with">Y:\</Image>
+			<Image condition="begin with">Z:\</Image>
+			<Image condition="begin with">C:\Recycle</Image> <!--Nothing should operate from the RecycleBin locations.-->
+			<Image condition="begin with">C:\Program Files</Image>
+			<Image condition="begin with">C:\Program Files (x86)</Image>
 			<Image condition="begin with">\</Image> <!--Devices and VSC shouldn't be executing changes | Credit: @SBousseaden @ionstorm @neu5ron @PerchedSystems [ https://twitter.com/SwiftOnSecurity/status/1133167323991486464 ] -->
 		</ProcessTerminate>
 	</RuleGroup>
@@ -401,20 +454,7 @@
 		</ProcessTerminate>
 	</RuleGroup>
 
-	<!--SYSMON EVENT ID 6 : DRIVER LOADED INTO KERNEL [DriverLoad]-->
-		<!--COMMENT:	Because drivers with bugs can be used to escalate to kernel permissions, be extremely selective
-			about what you exclude from monitoring. Low event volume, little incentive to exclude.
-			[ https://attack.mitre.org/wiki/Technique/T1014 ] -->
-		<!--TECHNICAL:	Sysmon will check the signing certificate revocation status of any driver you don't exclude.-->
 
-		<!--DATA: UtcTime, ImageLoaded, Hashes, Signed, Signature, SignatureStatus-->
-	<RuleGroup name="" groupRelation="or">
-		<DriverLoad onmatch="exclude">
-			<Signature condition="contains">microsoft</Signature> <!--Exclude signed Microsoft drivers-->
-			<Signature condition="contains">windows</Signature> <!--Exclude signed Microsoft drivers-->
-			<Signature condition="begin with">Intel </Signature> <!--Exclude signed Intel drivers-->
-		</DriverLoad>
-	</RuleGroup>
 
 	<!--SYSMON EVENT ID 7 : DLL (IMAGE) LOADED BY PROCESS [ImageLoad]-->
 		<!--COMMENT:	Can cause high system load, disabled by default.-->
@@ -1140,8 +1180,6 @@
 			<QueryName condition="is">ocsp.int-x3.letsencrypt.org</QueryName>
 		</DnsQuery>
 	</RuleGroup>
-
-
 
 	<!--SYSMON EVENT ID 23 : FILE DELETE [FileDelete]-->
 		<!--EVENT 22: "File Delete"-->
