@@ -556,6 +556,30 @@
 			<TargetFilename condition="end with">.ocx</TargetFilename> <!--Microsoft:ActiveX-->
 			<TargetFilename condition="end with">proj</TargetFilename><!--Microsoft:MSBuild:Script: [ https://twitter.com/subTee/status/885919612969394177 ] -->
 			<TargetFilename condition="end with">.sln</TargetFilename><!--Microsoft:MSBuild:Script: [ https://twitter.com/subTee/status/885919612969394177 ] -->
+			<TargetFilename condition="begin with">D:\</TargetFilename>
+			<TargetFilename condition="begin with">E:\</TargetFilename>
+			<TargetFilename condition="begin with">F:\</TargetFilename>
+			<TargetFilename condition="begin with">G:\</TargetFilename>
+			<TargetFilename condition="begin with">H:\</TargetFilename>
+			<TargetFilename condition="begin with">I:\</TargetFilename>
+			<TargetFilename condition="begin with">J:\</TargetFilename>
+			<TargetFilename condition="begin with">K:\</TargetFilename>
+			<TargetFilename condition="begin with">L:\</TargetFilename>
+			<TargetFilename condition="begin with">M:\</TargetFilename>
+			<TargetFilename condition="begin with">N:\</TargetFilename>
+			<TargetFilename condition="begin with">O:\</TargetFilename>
+			<TargetFilename condition="begin with">P:\</TargetFilename>
+			<TargetFilename condition="begin with">Q:\</TargetFilename>
+			<TargetFilename condition="begin with">R:\</TargetFilename>
+			<TargetFilename condition="begin with">S:\</TargetFilename>
+			<TargetFilename condition="begin with">T:\</TargetFilename>
+			<TargetFilename condition="begin with">U:\</TargetFilename>
+			<TargetFilename condition="begin with">V:\</TargetFilename>
+			<TargetFilename condition="begin with">W:\</TargetFilename>
+			<TargetFilename condition="begin with">X:\</TargetFilename>
+			<TargetFilename condition="begin with">Y:\</TargetFilename>
+			<TargetFilename condition="begin with">Z:\</TargetFilename>
+			
 			<TargetFilename condition="end with">.xls</TargetFilename><!--Microsoft [ https://medium.com/@threathuntingteam/msxsl-exe-and-wmic-exe-a-way-to-proxy-code-execution-8d524f642b75 ] -->
 			<TargetFilename name="DefaultUserModified" condition="begin with">C:\Users\Default</TargetFilename> <!--Windows: Changes to default user profile-->
 			<TargetFilename condition="begin with">C:\Windows\system32\Drivers</TargetFilename> <!--Microsoft: Drivers dropped here-->
